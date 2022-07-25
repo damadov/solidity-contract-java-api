@@ -7,12 +7,15 @@
 
 uri: /contract/info
 request:
+'''
 {
     "contract_address":"0x81D5eC4c51ea0E0003158a690C7Dc0f09A697792",
     "chain_id":"0xa869"
 }
+'''
 
 response:
+'''
 {
     "status": "OK",
     "responseTime": "2022-07-25 17:48:14",
@@ -26,6 +29,7 @@ response:
     },
     "count": 0
 }
+'''
 
 <hr>
 
@@ -33,12 +37,15 @@ response:
 
 uri: /contract/info
 request:
+'''
 {
     "contract_address":"0x81D5eC4c51ea0E0003158a690C7Dc0f09A697792",
     "chain_id":"0xa869"
 }
+'''
 
 response:
+'''
 {
     "status": "OK",
     "responseTime": "2022-07-25 17:54:53",
@@ -47,6 +54,7 @@ response:
     },
     "count": 0
 }
+'''
 
 <hr>
 
@@ -54,13 +62,16 @@ response:
 
 uri: /contract/info
 request:
+'''
 {
     "contract_address":"0x81D5eC4c51ea0E0003158a690C7Dc0f09A697792",
     "chain_id":"0xa869",
     "wallet_address":"0x3aae417d4844a022ec6341d561496c491ca147d3"
 }
+'''
 
 response:
+'''
 {
     "status": "OK",
     "responseTime": "2022-07-25 17:55:40",
@@ -69,3 +80,4 @@ response:
     },
     "count": 0
 }
+'''
