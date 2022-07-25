@@ -25,7 +25,7 @@ public class appConfig {
 	public static String tokenSymbol = "";
 	public static String ownerAddress = "<your_wallet_address>";
 	public static String ownerPrv = "<your_priv_key>"; 
-	
+
 	public static String chainId = "0xa869";
 	public static long chain = 0xa869;
 	public static String chainName = "Avalanche Fuji"; // "Avalanche Mainnet";

@@ -16,17 +16,18 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParser;
 
 import blockchain.Web3JavaClient;
-import data.Balance;
+import data.Contract;
 import data.ContractRequestParams;
 import data.PSCResponse;
+import data.RoyaltyInfo;
 import tools.appConfig;
 import tools.requestTool;
 
 @WebServlet(
-    name = "BalanceAppEngine",
-    urlPatterns = {"/contract/balance"}
+    name = "RoyaltyInfoAppEngine",
+    urlPatterns = {"/contract/royalty"}
 )
-public class BalanceAppEngine extends HttpServlet {
+public class RoyaltyInfoAppEngine extends HttpServlet {
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) 
@@ -53,18 +54,14 @@ public class BalanceAppEngine extends HttpServlet {
 			ContractRequestParams params = gson.fromJson(json_req, ContractRequestParams.class);
 			
 	  	 Web3JavaClient web3 = new Web3JavaClient();
-		 BigInteger amount = web3.getNFTBalance(params.contract_address, params.wallet_address, params.chain_id);
+		 RoyaltyInfo royalty = web3.getRoyaltyInfo(params.contract_address, params.token_id, params.amount, params.chain_id);
 		 
-		 
-		 if(amount!=null) {
-		 Balance balance = new Balance();
-		 balance.setBalance(amount);
-		 
+		 if(royalty!=null) {
 		 
 		 	resp1 = new PSCResponse();
 			resp1.setResponseTime(appConfig.sdfDetail.format(cal.getTime()));
 			resp1.setStatus("OK");
-			resp1.setData(new JsonParser().parse(gson.toJson(balance, Balance.class)).getAsJsonObject());
+			resp1.setData(new JsonParser().parse(gson.toJson(royalty, RoyaltyInfo.class)).getAsJsonObject());
 
 
 			response.setStatus(HttpServletResponse.SC_OK);

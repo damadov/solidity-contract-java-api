@@ -54,6 +54,8 @@ public class TotalSupplyAppEngine extends HttpServlet {
 			
 	  	 Web3JavaClient web3 = new Web3JavaClient();
 		 BigInteger amount = web3.getNFTSupply(params.contract_address, params.chain_id);
+		 
+		 if(amount !=null) {
 		 Balance balance = new Balance();
 		 balance.setBalance(amount);
 		 
@@ -68,6 +70,22 @@ public class TotalSupplyAppEngine extends HttpServlet {
 			response.setContentType("application/json");
 			response.setCharacterEncoding("UTF-8");
 			response.getWriter().print(gson.toJson(resp1, PSCResponse.class));
+		 }else {
+			 resp1 = new PSCResponse();
+				resp1.setResponseTime(appConfig.sdfDetail.format(cal.getTime()));
+				resp1.setStatus("ERROR");
+				data.Error error = new data.Error();
+				error.setCode("304");
+				error.setMessage("NO WALLET OR PRIV KEY AVAILABLE");
+				resp1.setError(error);
+
+
+				 response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+				response.setContentType("application/json");
+				response.setCharacterEncoding("UTF-8");
+				response.getWriter().print(gson.toJson(resp1, PSCResponse.class));
+
+		 }
 				 
 				 
 				 
