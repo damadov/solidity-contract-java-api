@@ -45,8 +45,10 @@ public class TotalSupplyAppEngine extends HttpServlet {
 		
 		try {
 		
-			appConfig.ownerPrv = "cd481e2fb81ffccd7abc94546779afad3206d2f807b9a56c27ba499865c9d8fa" ; // "<your_priv_key>";
-			appConfig.ownerAddress = "0x3Aae417D4844a022EC6341D561496C491Ca147D3"; // "<your_wallet_address>";
+			/* Do not forget to set your wallet address and related private key. DO NOT SHARE your private key on github or any document!!!
+			appConfig.ownerPrv =  "<your_priv_key>";
+			appConfig.ownerAddress = "<your_wallet_address>";
+			*/
 			
 			ContractRequestParams params = gson.fromJson(json_req, ContractRequestParams.class);
 			
