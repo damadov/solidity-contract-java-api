@@ -92,6 +92,35 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Get NFT Royalty Info",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contract_address\":\"0x81D5eC4c51ea0E0003158a690C7Dc0f09A697792\",\n    \"chain_id\":\"0xa869\",\n    \"token_id\":0,\n    \"amount\":100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/contract/royalty",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contract",
+						"royalty"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
