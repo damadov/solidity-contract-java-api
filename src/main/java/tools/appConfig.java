@@ -20,7 +20,7 @@ public class appConfig {
 	public static String defaultCountry = "TR";
 	
 	
-	//DEV
+	//DEV ... you should set your own credentials to related parameters.
 	public static String tokenAddress = "";
 	public static String tokenSymbol = "";
 	public static String ownerAddress = "<your_wallet_address>";
